@@ -1,0 +1,807 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="Hexo介绍
+快速、简单且功能强大的 Node.js 博客框架。 A fast, simple &amp;amp; powerful blog framework, powered by Node.js.
+
+特性
+风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
+流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。
+扩展性 Hexo支持">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Hexo架设到Github Pages全指南">
+<meta property="og:url" content="http://qiucanghuai.github.io/Using-Hexo-erect-to-Github Pages/index.html">
+<meta property="og:site_name" content="邱沧淮|博客">
+<meta property="og:description" content="Hexo介绍
+快速、简单且功能强大的 Node.js 博客框架。 A fast, simple &amp;amp; powerful blog framework, powered by Node.js.
+
+特性
+风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
+流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。
+扩展性 Hexo支持">
+<meta property="og:updated_time" content="2015-10-20T09:55:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Hexo架设到Github Pages全指南">
+<meta name="twitter:description" content="Hexo介绍
+快速、简单且功能强大的 Node.js 博客框架。 A fast, simple &amp;amp; powerful blog framework, powered by Node.js.
+
+特性
+风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
+流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。
+扩展性 Hexo支持">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+
+
+  <title> 使用Hexo架设到Github Pages全指南 | 邱沧淮|博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?3d2be979b62e07ce4f71d83571b56743";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">邱沧淮|博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">前端、PHP、JavaScript、Node.js</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用Hexo架设到Github Pages全指南
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-18T19:35:33+00:00" content="2015-10-18">
+              2015-10-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Git应用/" itemprop="url" rel="index">
+                    <span itemprop="name">Git应用</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/Using-Hexo-erect-to-Github Pages/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="Using-Hexo-erect-to-Github Pages/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h2 id="Hexo介绍">Hexo介绍</h2><blockquote>
+<p>快速、简单且功能强大的 Node.js 博客框架。<br> A fast, simple &amp; powerful blog framework, powered by Node.js.</p>
+</blockquote>
+<h3 id="特性">特性</h3><ul>
+<li>风一般的速度<br>Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。</li>
+<li>流畅的撰写<br>支持GitHub Flavored Markdown和所有Octopress的插件。</li>
+<li>扩展性<br> Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.</li>
+</ul>
+<h3 id="那么静态网站生成器有哪些？">那么静态网站生成器有哪些？</h3><ul>
+<li><p>Ruby</p>
+<ul>
+<li>Jekyll （github 默认pages 引擎）</li>
+<li>Octopress （兼容jekyll）</li>
+</ul>
+</li>
+<li><p>Python</p>
+<ul>
+<li>Hyde Jekyll的Python语言实现版本</li>
+<li>Cyrax 使用Jinja2模板引擎的生成器</li>
+</ul>
+</li>
+<li><p>PHP</p>
+<ul>
+<li>Phrozn PHP语言实现的静态网站</li>
+<li>List item</li>
+</ul>
+</li>
+<li><p>JS</p>
+<ul>
+<li>Hexo</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Hexo安装">Hexo安装</h2><h3 id="创建hexo文件夹">创建hexo文件夹</h3><pre><code><span class="variable">$ </span>mkdir blog
+</code></pre><h3 id="安装">安装</h3><pre><code>npm <span class="operator"><span class="keyword">install</span> hexo -<span class="keyword">g</span></span>
+</code></pre><h3 id="升级">升级</h3><pre><code>npm <span class="operator"><span class="keyword">update</span> hexo -<span class="keyword">g</span></span>
+</code></pre><h3 id="初始化">初始化</h3><pre><code><span class="title">hexo</span> init 
+</code></pre><h3 id="安装依赖包">安装依赖包</h3><pre><code>npm <span class="keyword">install</span>
+</code></pre><h3 id="生成静态文件">生成静态文件</h3><pre><code>hexo <span class="keyword">ge</span><span class="label">nerate</span>
+</code></pre><h3 id="本地浏览">本地浏览</h3><pre><code>hexo <span class="keyword">server</span>
+执行hexo <span class="keyword">server</span>前，先下载<span class="keyword">server</span>模块，npm install hexo-<span class="keyword">server</span>
+访问 localhost:<span class="number">4000</span>
+</code></pre><hr>
+<h2 id="配置Hexo到github">配置Hexo到github</h2><h3 id="配置_config-yml文件">配置_config.yml文件</h3><p>文件夹根目录 <code>_config.yml</code>打开修改</p>
+<pre><code><span class="string">deploy:</span>
+<span class="string">type:</span> git     <span class="comment">//改成git</span>
+<span class="string">repository:</span> <span class="string">https:</span><span class="comment">//github.com/yourdomain/yourdomain.github.io    #该提交方式需要密码</span>
+<span class="string">branch:</span> master    
+</code></pre><p><a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">【点击查看更多配置】</a></p>
+<h3 id="创建仓库">创建仓库</h3><ol>
+<li>右上角-<code>New repository</code></li>
+<li><code>Repository name</code> —&gt; input your domain </li>
+<li>点击 <code>Create repository</code></li>
+</ol>
+<h3 id="生成Github_pages">生成Github pages</h3><ol>
+<li>点击右边菜单栏 -&gt; <code>Settings</code> </li>
+<li>在跳转到的页面 <code>Update your site</code> 对应处点击<code>Automatic page generator</code>按钮</li>
+<li>点击继续，选择主题，点击<code>Publish page</code>发布。</li>
+</ol>
+<h3 id="使用_ssh-key_免去部署密码">使用 ssh-key 免去部署密码</h3><ol>
+<li>点击 <code>Settings</code> 按钮</li>
+<li>生成一个SSH keys（参考输入任意一条）<br> <code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code><br> <code>ssh-keygen -t rsa -C &quot;YOUR_EMAIL@YOUREMAIL.COM&quot; -f ~/.ssh/gitcafe #更改密匙名称</code></li>
+<li>添加SSH keys<br>打开<code>github.com</code> 添加<code>id_rsa.pub</code></li>
+<li><p>加入SSH Agent<br>   <code>ssh-agent -s</code><br>   出现Agent pid XXXX这样的提示之后，输入：<br>   <code>ssh-add ~/.ssh/id_rsa</code></p>
+<pre><code>这样，你成功的在本地生成了一个可用的SSH <span class="variable">key</span>。
+</code></pre></li>
+<li><p>将SSH Key添加到Github中<br>  添加之后输入<br>   <code>$ ssh -T git@github.com</code><br>   提示：Hi username! You’ve successfully authenticated, but GitHub does not<br>   provide shell access.#表示成功</p>
+</li>
+<li>_congif提交设置<br> <code>deploy repository:git@github.com:Xuanwo/xuanwo.github.io.git</code></li>
+</ol>
+<h3 id="上传github">上传github</h3><p>sudo npm install hexo-deployer-git –save<br>hexo deploy</p>
+<hr>
+<h2 id="Hexo更换皮肤、安装插件">Hexo更换皮肤、安装插件</h2><h3 id="安装主题">安装主题</h3><p>Hexo提供了很多主题，<a href="https://hexo.io/themes/" target="_blank" rel="external">【点击查看更多主题】</a><br> 修改<code>_config.yml</code>  theme 为下载主题名称</p>
+<h3 id="安装多说评论">安装多说评论</h3><ol>
+<li>登陆多说，登录后在首页选择 “我要安装”。 </li>
+<li>创建站点，填写站点相关信息。多说域名 这一栏填写的即是你的 <code>duoshuo_shortname</code> </li>
+<li><p>创建站点完成后在 站点配置文件<code>_config.yml</code> 中新增 <code>duoshuo_shortname</code>  字段，值设置成上一步中的值。</p>
+<p><a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">更多点击【Hexo使用多说教程】</a></p>
+</li>
+</ol>
+<h3 id="安装百度统计">安装百度统计</h3><ol>
+<li>登录 百度统计，定位到站点的代码获取页面</li>
+<li>复制 hm.js? 后面那串统计脚本 id</li>
+<li>编辑 站点配置文件<code>_config.yml</code>，新增字段 baidu_analytics 字段，值设置成你的百度统计脚本 id。</li>
+</ol>
+<h3 id="新建404页面">新建404页面</h3><p>在根目录Hexo/source目录下创建 404.html。</p>
+<pre><code>---
+layout: default
+---
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+         <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span> /&gt;</span>
+         <span class="tag">&lt;<span class="title">title</span>&gt;</span>404<span class="tag">&lt;/<span class="title">title</span>&gt;</span>                                                                                                                                        
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+         <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://www.qq.com/404/search_children.js"</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+
+也可以简化为这一行：
+
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://www.qq.com/404/search_children.js"</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><h3 id="导航栏添加单页链接">导航栏添加单页链接</h3><pre><code>hexo <span class="keyword">new</span> page <span class="string">"about"</span>
+到<span class="keyword">source</span><span class="regexp">/about/i</span>ndex.md编辑内容。
+在themes<span class="regexp">/light/</span>_config.yml中，添加如下：
+menu:
+  关于: <span class="regexp">/about</span>
+</code></pre><h3 id="sitemap插件">sitemap插件</h3><ol>
+<li><p>安装<br> <code>npm install hexo-generator-sitemap</code></p>
+</li>
+<li><p>启用</p>
+</li>
+</ol>
+<pre><code>修改Hexo\_config.yml
+<span class="preprocessor"># Extensions</span>
+<span class="label">Plugins:</span>
+- hexo-generator-sitemap
+
+<span class="preprocessor">#sitemap</span>
+<span class="label">sitemap:</span>
+  path: sitemap.xml
+</code></pre><ol>
+<li><p>使用方法</p>
+<ol>
+<li>访问 <a href="http://localhost:4000/sitemap.xml，即可看到站点地图。" target="_blank" rel="external">http://localhost:4000/sitemap.xml，即可看到站点地图。</a></li>
+<li><p>修改themes//<code>_config.yml</code>，<code>menu</code>节点下添加下面的内容 </p>
+<pre><code><span class="label">menu:</span>
+<span class="label">Home:</span> /
+<span class="label">Archives:</span> /archives
+<span class="label">Rss:</span> /atom.xml
+<span class="label">Sitemap:</span> /sitemap.xml
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<h3 id="添加favicon-ico">添加favicon.ico</h3><p>将favicon.ico图标文件放在source目录下。</p>
+<h3 id="生成post时默认生成categories配置项">生成post时默认生成categories配置项</h3><pre><code>在scaffolds/post.md中，添加一行categories:
+categories:
+-<span class="ruby"> test1
+</span>-<span class="ruby"> test2</span>
+</code></pre><h3 id="购买域名、设置DNS">购买域名、设置DNS</h3><p>进入source文件夹，创建名为CNAME的文件，编辑：<br>YourDomain.com</p>
+<hr>
+<h2 id="写文章">写文章</h2><h3 id="新建文章">新建文章</h3><p>hexo new [layout] “postName” #新建文章</p>
+<blockquote>
+<p>其中layout是可选参数，默认值为post。有哪些layout呢，请到scaffolds目录下查看，这些文件名称就是layout名称。当然你可以添加自己的layout，方法就是添加一个文件即可，同时你也可以编辑现有的layout，比如post的layout默认是hexo\scaffolds\post.md</p>
+</blockquote>
+<h3 id="文章中插入图片">文章中插入图片</h3><p>使用markdown写文章，插入图片的格式为<code>![图片名称](链接地址)</code>，这里要说的是链接地址怎么写。对于hexo，有两种方式：</p>
+<ol>
+<li>使用本地路径：在hexo/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。</li>
+<li>使用微博图床，地址<a href="http://weibotuchuang.sinaapp.com/，将图片拖入区域中，会生成图片的URL，这就是链接地址。" target="_blank" rel="external">http://weibotuchuang.sinaapp.com/，将图片拖入区域中，会生成图片的URL，这就是链接地址。</a></li>
+<li>使用七牛</li>
+</ol>
+<h2 id="总结-常用命令">总结-常用命令</h2><p>hexo new “postName” #新建文章<br>hexo new page “pageName” #新建页面<br>hexo generate #生成静态页面至public目录<br>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #将.deploy目录部署到GitHub<br>hexo help  # 查看帮助<br>hexo version  #查看Hexo的版本</p>
+<p>hexo现在支持更加简单的命令格式了，比如：<br>hexo g == hexo generate<br>hexo d == hexo deploy<br>hexo s == hexo server<br>hexo n == hexo new</p>
+<h3 id="一般出错可以试试用这几种方式解决：">一般出错可以试试用这几种方式解决：</h3><ol>
+<li>检查配置文件_config.yml</li>
+<li>更新ssh</li>
+<li>更新npm，hexo版本</li>
+<li>删除目录下.git文件夹（隐藏）再重新git init</li>
+<li>删除github上的repository，重新建立再deploy，之前的commit记录仍会保存，只要不重新init</li>
+</ol>
+<h3 id="其他TODO_（个人记录）">其他TODO （个人记录）</h3><p>网站监控<br><a href="http://www.jiankongbao.com/" target="_blank" rel="external">监控宝</a></p>
+<p><a href="http://lucifr.com/2013/06/02/hexo-on-cloud-with-dropbox-and-vps/" target="_blank" rel="external">Hexo 服务器端布署及 Dropbox 同步</a><br>如何在不同电脑（系统）上使用Hexo<br>CDN加速</p>
+<p>###其他</p>
+<p>Git 仓库地址修改办法 git remote set-url origin [NEW_URL]</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
+          
+        </div>
+      
+
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="Using-Hexo-erect-to-Github Pages/"
+                   data-title="使用Hexo架设到Github Pages全指南" data-url="http://qiucanghuai.github.io/Using-Hexo-erect-to-Github Pages/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="qiucanghuai" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">qiucanghuai</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qiucanghuai</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"qiucanghuai"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+
+      motionIntegrator.bootstrap();
+    });
+  </script>
+
+  
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
