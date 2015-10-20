@@ -61,7 +61,7 @@
 风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
 流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。
 扩展性 Hexo支持">
-<meta property="og:updated_time" content="2015-10-20T09:55:15.000Z">
+<meta property="og:updated_time" content="2015-10-20T10:49:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo架设到Github Pages全指南">
 <meta name="twitter:description" content="Hexo介绍
@@ -317,18 +317,19 @@
 <li>点击继续，选择主题，点击<code>Publish page</code>发布。</li>
 </ol>
 <h3 id="使用_ssh-key_免去部署密码">使用 ssh-key 免去部署密码</h3><ol>
-<li>点击 <code>Settings</code> 按钮</li>
-<li>生成一个SSH keys（参考输入任意一条）<br> <code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code><br> <code>ssh-keygen -t rsa -C &quot;YOUR_EMAIL@YOUREMAIL.COM&quot; -f ~/.ssh/gitcafe #更改密匙名称</code></li>
+<li>初始化提交者信息<br> git config –global user.email “user@qq.com”<br> git config –global user.name “name”</li>
+<li>生成一个SSH keys（参考输入任意一条）<br> <code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code><br> <code>ssh-keygen -t rsa -C &quot;your_email@example.COM&quot; -f ~/.ssh/gitcafe #更改密匙名称</code></li>
 <li>添加SSH keys<br>打开<code>github.com</code> 添加<code>id_rsa.pub</code></li>
-<li><p>加入SSH Agent<br>   <code>ssh-agent -s</code><br>   出现Agent pid XXXX这样的提示之后，输入：<br>   <code>ssh-add ~/.ssh/id_rsa</code></p>
+<li><p>加入SSH Agent<br>   <code>ssh-agent -s</code><br>   出现Agent pid XXXX这样的提示之后，输入：<br>   <code>ssh-add ~/.ssh/id_rsa</code><br>   再输入<code>eval &quot;$(ssh-agent -s)&quot;</code><br>   <code>ssh-add ~/.ssh/id_rsa</code></p>
 <pre><code>这样，你成功的在本地生成了一个可用的SSH <span class="variable">key</span>。
 </code></pre></li>
-<li><p>将SSH Key添加到Github中<br>  添加之后输入<br>   <code>$ ssh -T git@github.com</code><br>   提示：Hi username! You’ve successfully authenticated, but GitHub does not<br>   provide shell access.#表示成功</p>
+<li><p>将SSH Key添加到Github中<br>  添加之后输入<br>   <code>ssh -T git@github.com</code><br>   提示：Hi username! You’ve successfully authenticated, but GitHub does not<br>   provide shell access.#表示成功</p>
 </li>
 <li>_congif提交设置<br> <code>deploy repository:git@github.com:Xuanwo/xuanwo.github.io.git</code></li>
 </ol>
-<h3 id="上传github">上传github</h3><p>sudo npm install hexo-deployer-git –save<br>hexo deploy</p>
-<hr>
+<h3 id="上传github">上传github</h3><pre><code>sudo npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span>
+hexo deploy</span>
+</code></pre><hr>
 <h2 id="Hexo更换皮肤、安装插件">Hexo更换皮肤、安装插件</h2><h3 id="安装主题">安装主题</h3><p>Hexo提供了很多主题，<a href="https://hexo.io/themes/" target="_blank" rel="external">【点击查看更多主题】</a><br> 修改<code>_config.yml</code>  theme 为下载主题名称</p>
 <h3 id="安装多说评论">安装多说评论</h3><ol>
 <li>登陆多说，登录后在首页选择 “我要安装”。 </li>
