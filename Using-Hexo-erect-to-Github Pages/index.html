@@ -61,7 +61,7 @@
 风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
 流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。
 扩展性 Hexo支持">
-<meta property="og:updated_time" content="2015-10-20T10:49:09.000Z">
+<meta property="og:updated_time" content="2015-10-20T12:13:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo架设到Github Pages全指南">
 <meta name="twitter:description" content="Hexo介绍
@@ -297,8 +297,6 @@
 </code></pre><h3 id="安装依赖包">安装依赖包</h3><pre><code>npm <span class="keyword">install</span>
 </code></pre><h3 id="生成静态文件">生成静态文件</h3><pre><code>hexo <span class="keyword">ge</span><span class="label">nerate</span>
 </code></pre><h3 id="本地浏览">本地浏览</h3><pre><code>hexo <span class="keyword">server</span>
-执行hexo <span class="keyword">server</span>前，先下载<span class="keyword">server</span>模块，npm install hexo-<span class="keyword">server</span>
-访问 localhost:<span class="number">4000</span>
 </code></pre><hr>
 <h2 id="配置Hexo到github">配置Hexo到github</h2><h3 id="配置_config-yml文件">配置_config.yml文件</h3><p>文件夹根目录 <code>_config.yml</code>打开修改</p>
 <pre><code><span class="string">deploy:</span>
@@ -326,11 +324,12 @@
 <li><p>将SSH Key添加到Github中<br>  添加之后输入<br>   <code>ssh -T git@github.com</code><br>   提示：Hi username! You’ve successfully authenticated, but GitHub does not<br>   provide shell access.#表示成功</p>
 </li>
 <li>_congif提交设置<br> <code>deploy repository:git@github.com:Xuanwo/xuanwo.github.io.git</code></li>
+<li>更详细查看<br><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">Generating SSH keys</a><br> <a href="https://gitcafe.com/GitCafe/Help/wiki/如何安装和设置%20Git" target="_blank" rel="external">如何安装和设置 Git</a><br> <a href="https://gitcafe.com/GitCafe/Help/wiki/%E5%A6%82%E4%BD%95%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA%E5%85%AC%E7%A7%98%E9%92%A5" target="_blank" rel="external">如何同时使用多个公秘钥</a></li>
 </ol>
 <h3 id="上传github">上传github</h3><pre><code>sudo npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span>
 hexo deploy</span>
 </code></pre><hr>
-<h2 id="Hexo更换皮肤、安装插件">Hexo更换皮肤、安装插件</h2><h3 id="安装主题">安装主题</h3><p>Hexo提供了很多主题，<a href="https://hexo.io/themes/" target="_blank" rel="external">【点击查看更多主题】</a><br> 修改<code>_config.yml</code>  theme 为下载主题名称</p>
+<h2 id="Hexo更换皮肤、安装插件">Hexo更换皮肤、安装插件</h2><h3 id="安装主题">安装主题</h3><p>Hexo提供了很多主题，<a href="https://hexo.io/themes/" target="_blank" rel="external">【点击查看更多主题】</a><br>推荐使用主题:<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT</a> 亦是本博客使用的主题<br> 修改<code>_config.yml</code>  theme 为下载主题名称</p>
 <h3 id="安装多说评论">安装多说评论</h3><ol>
 <li>登陆多说，登录后在首页选择 “我要安装”。 </li>
 <li>创建站点，填写站点相关信息。多说域名 这一栏填写的即是你的 <code>duoshuo_shortname</code> </li>
@@ -419,10 +418,9 @@ categories:
 <li>删除目录下.git文件夹（隐藏）再重新git init</li>
 <li>删除github上的repository，重新建立再deploy，之前的commit记录仍会保存，只要不重新init</li>
 </ol>
-<h3 id="其他TODO_（个人记录）">其他TODO （个人记录）</h3><p>网站监控<br><a href="http://www.jiankongbao.com/" target="_blank" rel="external">监控宝</a></p>
-<p><a href="http://lucifr.com/2013/06/02/hexo-on-cloud-with-dropbox-and-vps/" target="_blank" rel="external">Hexo 服务器端布署及 Dropbox 同步</a><br>如何在不同电脑（系统）上使用Hexo<br>CDN加速</p>
-<p>###其他</p>
-<p>Git 仓库地址修改办法 git remote set-url origin [NEW_URL]</p>
+<h3 id="其他">其他</h3><p>网站监控<br><a href="http://www.jiankongbao.com/" target="_blank" rel="external">监控宝</a><br>CDN加速<br><a href="http://www.webluker.com/" target="_blank" rel="external">Webluker-CDN 网站加速 免费CDN DNS解析</a></p>
+<p><a href="http://lucifr.com/2013/06/02/hexo-on-cloud-with-dropbox-and-vps/" target="_blank" rel="external">Hexo 服务器端布署及 Dropbox 同步</a><br><a href="http://chitanda.me/2015/06/18/hexo-sync-in-multiple-pc/" target="_blank" rel="external">利用git解决hexo博客多PC间同步问题</a><br><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo 官方文档</a></p>
+<p>###结束<br>本文仅仅是本人在学习Hexo搭建过程的一点记录，由于水平有限，错误之处在所难免，请诸位多多包涵，不吝指点。——2015-10-20</p>
 </span>
       
     </div>
